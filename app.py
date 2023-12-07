@@ -5,7 +5,7 @@ import time
 
 # Connect to the database
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Pranove*2@localhost:3306/system_performance'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost:3306/system_performance'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.app_context().push()
 
@@ -59,3 +59,4 @@ def insertMetrics():
 # Insert the metrics into the database
 while True:
     insertMetrics()
+    print("Inserting metrics into the database...Press Ctrl+C to stop")
